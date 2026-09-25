@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox fx:id="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.NetPopUpController"
+	  spacing="10" styleClass="net-popup" minWidth="750" minHeight="600">
+	<spacing></spacing>
+	<HBox minHeight="80" spacing="20" alignment="BOTTOM_LEFT">
+		<spacing></spacing>
+		<spacing></spacing>
+		<Label styleClass="card-header" style="-fx-font-size: 25" textFill="steelblue" fx:id="netName"></Label>
+	</HBox>
+	<HBox alignment="CENTER_RIGHT" spacing="100">
+		  <Label text="Subscriptions" style="-fx-font-size: 25" textFill="steelblue"></Label>
+	<Label text="Recent Activities               " style="-fx-font-size: 25" textFill="steelblue"></Label>
+	</HBox>
+	<HBox spacing="23">
+	<ImageView fx:id="netImageView" fitHeight="400" fitWidth="250" preserveRatio="true"/>
+		<ListView fx:id="Subscriptions" minHeight="300" maxWidth="200"></ListView>
+		<ListView fx:id="RecentActivities" minHeight="300" maxWidth="200"></ListView>
+		<spacing></spacing>
+		<spacing></spacing>
+	</HBox>
+	<HBox alignment="TOP_CENTER" >
+			<Button fx:id="manageComputation" text="Manage Computation"></Button>
+	</HBox>
+
+</VBox>

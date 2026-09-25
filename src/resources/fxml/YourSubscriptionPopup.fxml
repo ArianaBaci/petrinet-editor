@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane minHeight="350" minWidth="600" fx:id="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.NetSubscriptionController">
+    <top>
+
+    </top>
+    <center >
+<VBox
+      spacing="30" styleClass="net-popup" alignment="CENTER" >
+    <spacing></spacing>
+    <HBox minHeight="80" spacing="10" alignment="CENTER">
+        <spacing></spacing>
+
+        <Label styleClass="card-header" style="-fx-font-size: 25" textFill="steelblue" fx:id="netName"></Label>
+
+    </HBox>
+    <ImageView fx:id="netImageView" fitHeight="400" fitWidth="250" preserveRatio="true"/>
+    <HBox alignment="TOP_CENTER" spacing="100" minHeight="80">
+        <Label fx:id="statusLabel" styleClass="alert-danger" text="no active computations"></Label>
+    </HBox>
+    <HBox alignment="TOP_CENTER" spacing="100" minHeight="80">
+        <Button fx:id="manageStatus" text="Manage Status" onAction="#manageComputation"></Button>
+        <Button fx:id="unsubscribeButton" text="Unsubscribe" onAction="#unsubscribe"/>
+
+        <spacing></spacing>
+        <spacing></spacing>
+    </HBox>
+<spacing>
+
+</spacing>
+</VBox>
+    </center>
+</BorderPane>

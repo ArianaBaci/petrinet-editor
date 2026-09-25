@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import application.view.components.NetBrowser?>
+<ScrollPane  xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="application.controller.HomeController"
+			fitToWidth="true" fitToHeight="true">
+
+<BorderPane fx:id="mainContainer" prefHeight="1000.0" prefWidth="1200.0" >
+
+	<top>
+		<VBox spacing="8"  style="-fx-padding: 8;">
+			<fx:include source="NavBarView.fxml" style="-fx-background-color: B0C4DE" styleClass="container"/>
+			<Label style="-fx-font-size: 19" fx:id="typeViewLabel" styleClass="card-header" textFill="steelblue" >
+			</Label>
+		</VBox>
+	</top>
+	<left>
+		<VBox alignment="TOP_LEFT" spacing="8" prefWidth="250" style="-fx-padding: 20;">
+
+
+			<Label styleClass="card-header" textFill="steelblue" text="Your Activities" style="-fx-font-size: 23"></Label>
+
+			<ToggleButton text="   User Subscriptions    "  minHeight="120" minWidth="700" onAction="#showUserView"/>
+			<ToggleButton text="  Admin Subscriptions  "  minHeight="120" minWidth="450" onAction="#showAdminView"/>
+			<VBox minHeight="40"></VBox>
+			<VBox style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-padding-top: 10px; " spacing="40" alignment="BASELINE_LEFT">
+				<spacing></spacing>
+				<Region prefHeight="400" ></Region>
+			</VBox>
+			<VBox style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-padding-top: 10px; " alignment="BASELINE_LEFT">
+			<Label text="Color key"  textFill="steelblue"></Label>
+			<Label  style="-fx-text-fill: blue;">BLUE ➛ Places</Label>
+			<Label  style="-fx-text-fill: #e41b1b; ">RED ➛ Admin Transitions</Label>
+			<Label style="-fx-text-fill: #008000;">GREEN ➛ User Transitions</Label>
+			</VBox>
+			<spacing></spacing>
+			<spacing></spacing>
+			<spacing></spacing>
+			<spacing></spacing>
+			<spacing></spacing>
+
+		</VBox>
+	</left>
+	<center>
+	</center>
+
+	
+	<right>
+		<VBox alignment="center">
+			<ImageView fx:id="netPreview" />
+		</VBox>
+	</right>
+
+</BorderPane>
+		</ScrollPane>

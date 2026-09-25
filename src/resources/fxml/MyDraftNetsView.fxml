@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainContainer" prefHeight="800.0" prefWidth="1200.0"
+			xmlns="http://javafx.com/javafx/17.0.12"
+			xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="application.controller.MyDraftNetsController">
+
+	<top>
+		<VBox spacing="8"  style="-fx-padding: 8;">
+			<StackPane>
+				<fx:include source="NavBarView.fxml" style="-fx-background-color: B0C4DE" styleClass="container"/>
+			</StackPane>
+			<Label fx:id="showingLabel" style="-fx-font-size: 19;" textFill="steelblue" styleClass="card-header" layoutX="400"/>
+		</VBox>
+	</top>
+
+	<center>
+		<!-- Qui aggiungerai il contenuto principale -->
+	</center>
+
+
+</BorderPane>

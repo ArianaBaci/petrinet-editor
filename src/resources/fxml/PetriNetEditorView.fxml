@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.PetriNetEditorController"
+            fitToWidth="true" fitToHeight="true">
+
+    <content>
+
+        <VBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 8;">
+        <StackPane>
+            <fx:include source="NavBarView.fxml" style="-fx-background-color: B0C4DE" minHeight="85" styleClass="container"/>
+        </StackPane>
+
+    <children>
+
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+
+            <children>
+
+                <!-- Graph Visualization Section -->
+                <VBox fx:id="imageContainer" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS" >
+                    <children>
+                        <Label styleClass="card-header" text="Design Your PetriNet" style="-fx-font-size: 21" textFill="steelblue" />
+                        <HBox spacing="10" >
+                            <Label text="Net Name: " style="-fx-font-size: 18" textFill="lightsteelblue"  > </Label>
+                  <Label fx:id="NetName" minWidth="200.0" prefHeight="26.0" style="-fx-font-size: 22" textFill="steelblue" />
+                       <Button onAction="#renameNet" text="Rename" > </Button>
+                        </HBox>
+                        <!-- Image Container with Scroll Pane -->
+    <ScrollPane fx:id="graphScrollPane" hbarPolicy="ALWAYS" pannable="true" prefHeight="500.0" prefViewportHeight="400.0" prefViewportWidth="400" prefWidth="770.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                            <content>
+                                <Pane fx:id="graphContainer" minHeight="3000" minWidth="3000.0" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #efefef">
+                                    <children>
+                                        <ImageView fx:id="graphImageView" preserveRatio="true"  style="-fx-background-color: #b3d6ff"/>
+                                    </children>
+                                </Pane>
+                            </content>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                        </ScrollPane>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+                <VBox fx:id="imageContainerr" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS" maxWidth="250"  >
+                    <Label text="Create an Arc" textFill="steelblue" style="-fx-font-size: 17"  />
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <ComboBox fx:id="arcSourcesField" promptText="Source"/>
+                        <Label style="-fx-font-weight: bold" text="->"></Label>
+                        <ComboBox fx:id="arcTargetField"  promptText="Target"/>
+                    </HBox>
+                    <HBox alignment="CENTER_RIGHT">
+                        <Button text="Create Arc" onAction="#createArc" />
+                        <Label text="&#10;" ></Label>
+                    </HBox>
+
+                    <Label text="View Arcs" textFill="steelblue" style="-fx-font-size: 17" />
+
+
+                    <HBox  alignment="CENTER_LEFT">
+                        <ComboBox fx:id="sourcesBox" minWidth="140" promptText="Select a source node" />
+                    </HBox>
+
+                    <HBox >
+                        <CheckBox fx:id="filterCheck" onAction="#arcFilter"/>
+                        <Label fx:id="filterLabel" text="Apply source filter" alignment="CENTER_LEFT" textFill="steelblue" />
+                        <Region HBox.hgrow="ALWAYS"/>
+
+                    </HBox>
+
+                    <ListView fx:id="arcList" minHeight="200"/>
+
+                    <!-- Remove Arc button aligned right with spacing above -->
+                    <HBox alignment="CENTER_RIGHT">
+                        <Button text="Remove arc" onAction="#removeArc" />
+                    </HBox>
+
+                    <Label fx:id="FinalPlacesLabel" text="Final Nodes" textFill="steelblue" style="-fx-font-size: 17" />
+
+                    <ListView fx:id="FinalPlaces" minHeight="150" />
+
+                    <Label fx:id="finalPlacesLabel" styleClass="card-header"/>
+                    <Label fx:id="finalTransitionsLabel" styleClass="alert-danger"/>
+
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+            </children>
+        </HBox>
+      <HBox minWidth="800" prefWidth="1000" spacing="10">
+         <children>
+             <Button fx:id="saveDraft" onAction="#SaveDraft" alignment="CENTER_RIGHT"  mnemonicParsing="false" text="Save Draft" />
+             <Button fx:id="imageSimulation" onAction="#showNetImage" text="Show Net Image" alignment="CENTER"  />
+             <Label fx:id="confirmDraftLabel" styleClass="alert-success" text="Draft saved successfully" alignment="CENTER"></Label>
+             <Label fx:id="errorDraftLabel" styleClass="alert-danger" text="Error Saving Draft" alignment="CENTER"></Label>
+             <Label style="-fx-font-weight: 17" textFill="lightsteelblue" text="right click on nodes to add or edit components"></Label>
+             <Region HBox.hgrow="ALWAYS"/>
+             <Button mnemonicParsing="false" text="Save and Publish" onAction="#saveAndPublish" alignment="CENTER_LEFT"/>
+
+         </children>
+      </HBox>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+        </VBox>
+    </content>
+</ScrollPane>

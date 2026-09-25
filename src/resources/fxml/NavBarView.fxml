@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="navBar" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.NavBarController"
+	  alignment="CENTER_RIGHT" prefHeight="85"
+	  spacing="11"  >
+	<VBox	alignment="CENTER_RIGHT" >
+	</VBox>
+	<VBox	alignment="CENTER_LEFT">
+		<Label fx:id="welcomeMsg" styleClass="card-header" style="-fx-font-size: 25" textFill="azure" > Welcome, </Label>
+	</VBox>
+
+	<Region fx:id="spacer"></Region>
+
+	<VBox	alignment="CENTER_RIGHT" >
+		<ToggleButton onAction="#handleHome" >Home</ToggleButton>
+	</VBox>
+
+	<VBox	alignment="CENTER_RIGHT" >
+		<ToggleButton fx:id="inboxButton" onAction="#handleInbox" >Inbox</ToggleButton>
+	</VBox>
+
+	<VBox	alignment="CENTER_RIGHT" >
+		<MenuButton fx:id="myNetsButton">
+			<MenuItem fx:id="published" text="Published" onAction="#handleMyNets"/>
+			<MenuItem fx:id="drafts" text="Drafts" onAction="#handleMyDraftNets"/>
+	</MenuButton>
+	</VBox>
+
+	<VBox	alignment="CENTER_RIGHT" >
+		<ToggleButton fx:id="ExploreButton" onAction="#handleExplore" >Explore</ToggleButton>
+	</VBox>
+
+	<MenuButton fx:id="computationButton" text="My Computations">
+					<MenuItem fx:id="active" text="Active" onAction="#handleActiveComputations"/>
+					<MenuItem fx:id="completed" text="Completed" onAction="#handleCompletedComputations"/>
+	</MenuButton>
+
+	<VBox	alignment="CENTER_RIGHT" >
+		<ToggleButton fx:id="editorButton" onAction="#handleEditor" >New PetriNet</ToggleButton>
+	</VBox>
+
+	<VBox	alignment="CENTER_RIGHT" >
+		<Button fx:id="logoutButton" onAction="#handleLogout" >Log Out</Button>
+	</VBox>
+
+	<VBox	alignment="CENTER_RIGHT" >
+	</VBox>
+</HBox>

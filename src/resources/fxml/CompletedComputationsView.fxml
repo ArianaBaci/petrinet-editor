@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.CompletedComputationsController"
+            fitToWidth="true" fitToHeight="true">
+
+    <content>
+        <VBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 8;">
+
+
+            <StackPane>
+                <fx:include source="NavBarView.fxml" style="-fx-background-color: B0C4DE" minHeight="85"  />
+            </StackPane>
+            <children>
+                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                    <children>
+
+                        <VBox  spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS" maxWidth="250">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label  text="Your Completed&#10;Computations" styleClass="card-header" style="-fx-font-size: 18" textFill="steelblue" minHeight="100" />
+                            </HBox>
+                            <VBox spacing="10.0" alignment="CENTER_LEFT">
+                                <Label text="Enduser Type" style="-fx-font-size: 17" textFill="steelblue" ></Label>
+                                <ListView fx:id="enduserComputations" />
+                                <Button text="Show Enduser Computation" onAction="#openEnduserComputation"></Button>
+                                <Label text="Admin Type" style="-fx-font-size: 17" textFill="steelblue" ></Label>
+                                <ListView fx:id="adminComputations" />
+                                <Button  text="Show Admin Computation" onAction="#openAdminComputation"></Button>
+                            </VBox>
+
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+
+                        <!-- Graph Visualization Section -->
+                        <VBox fx:id="imageContainer" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="card-header" fx:id="computationTypeLabel" style="-fx-font-size: 20" textFill="steelblue"  />
+                                <!-- Image Container with Scroll Pane -->
+                                <ScrollPane fx:id="graphScrollPane" hbarPolicy="ALWAYS" pannable="true" prefHeight="762.0" prefViewportHeight="400.0" prefViewportWidth="400" prefWidth="770.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                    <content>
+                                        <Pane fx:id="graphContainer" minHeight="3008.0" minWidth="3000.0" prefHeight="842.0" prefWidth="1000.0" style="-fx-background-color: #efefef" >
+                                        </Pane>
+                                    </content>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                </ScrollPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+                    <SplitPane>
+                        <VBox fx:id="imageContainerr" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                            <Label  text="Computation History" style="-fx-font-size: 17" textFill="steelblue" ></Label>
+                                <ListView fx:id="computationHistory" />
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+                    </SplitPane>
+                    </children>
+                </HBox>
+
+                <HBox minHeight="55.0" minWidth="200.0" alignment="BOTTOM_RIGHT" spacing="30">
+                    <children>
+                        <Label fx:id="confirmLabel" styleClass="alert-success"></Label>
+                        <Label fx:id="errorLabel" styleClass="alert-danger"></Label>
+                        <Button  text="Delete Computation" onAction="#deleteComputation"></Button>
+                        <Region></Region><Region></Region>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+        </VBox>
+    </content>
+</ScrollPane>

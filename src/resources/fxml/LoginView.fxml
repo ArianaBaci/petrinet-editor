@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainContainer" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
+
+	<center>
+		<StackPane>
+			<VBox spacing="30" alignment="center">
+				<HBox alignment="center">
+					<Label fx:id="message" style="-fx-font-size: 24px; -fx-font-weight: bold" textFill="steelblue" >Welcome to PetriFire </Label>
+				</HBox>
+				
+				<HBox alignment="center">
+					<TextField fx:id="usernameField" promptText="username" prefWidth="260.0" />
+				</HBox>
+				<HBox alignment="center">
+					<PasswordField fx:id="passwordField" promptText="password" prefWidth="260.0" />
+				</HBox>
+				<HBox alignment="center" spacing ="20">
+					<Button fx:id="loginButton"  prefWidth="120.0" onAction="#handleLogin" >Login</Button>
+					<Button fx:id="registerButton"  prefWidth="120.0" onAction="#handleRegister" >Register</Button>
+				</HBox>
+				<HBox alignment="center">
+					<Label fx:id="feedback" style="-fx-font-size: 18px;"></Label>
+				</HBox>
+			</VBox>
+		</StackPane>
+	</center>
+
+</BorderPane>

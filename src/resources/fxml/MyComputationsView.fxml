@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.MyComputationsController"
+            fitToWidth="true" fitToHeight="true">
+    <content>
+        <VBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 8;">
+            <StackPane>
+                <fx:include source="NavBarView.fxml" style="-fx-background-color: B0C4DE" minHeight="85" styleClass="container" />
+            </StackPane>
+            <children>
+                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                    <children>
+
+                        <VBox  spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS" maxWidth="250">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label  text="Your Active&#10;Computations" styleClass="card-header" minHeight="100" style="-fx-font-size: 18" textFill="steelblue" />
+                            </HBox>
+                            <Label  text="Endser Type" style="-fx-font-size: 17" textFill="lightsteelblue"  />
+                            <ListView fx:id="UserComputations" />
+                            <Button text="Manage User Computation" onAction="#openUserComputation"></Button>
+                            <Label  text="Admin Type" style="-fx-font-size: 17" textFill="lightsteelblue"  />
+                            <ListView fx:id="AdminComputations" />
+                            <VBox spacing="58.0" alignment="CENTER_LEFT">
+                            </VBox>
+                            <Button text="Manage Admin Computation" onAction="#openAdminComputation"></Button>
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+
+                        <!-- Graph Visualization Section -->
+                        <VBox fx:id="imageContainer" spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                            <children>
+                                <HBox>
+                                <Label styleClass="card-header" fx:id="computationTypeLabel" style="-fx-font-size: 20" textFill="steelblue"   />
+                    <Label  styleClass="card-header" fx:id="computationUserLabel" style="-fx-font-size: 20" textFill="steelblue"   />
+                                </HBox>
+                    <HBox>
+                                    <Label style="-fx-font-size: 18" textFill="lightsteelblue" text="tap on available transitions to fire"></Label>
+                                </HBox>
+                                <!-- Image Container with Scroll Pane -->
+                                <ScrollPane fx:id="graphScrollPane" hbarPolicy="ALWAYS" pannable="true" prefHeight="762.0" prefViewportHeight="400.0" prefViewportWidth="400" prefWidth="770.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                     <content>
+                                        <Pane fx:id="graphContainer" minHeight="3008.0" minWidth="3000.0" prefHeight="842.0" prefWidth="1000.0" style="-fx-background-color: #efefef" >
+                                        </Pane>
+                                    </content>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                </ScrollPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+                        <SplitPane>
+                        <VBox fx:id="imageContainerr" spacing="10.0" styleClass="card"  HBox.hgrow="ALWAYS">
+
+                            <Label  text="Computations to Start" style="-fx-font-size: 17" textFill="lightsteelblue"  />
+                            <ListView fx:id="ComputationsToStart"></ListView>
+                            <HBox alignment="CENTER_RIGHT">
+                            <Button fx:id="StartComputation" onAction="#StartComputation" text="Start Computation"></Button>
+                            </HBox>
+
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label fx:id="availableTransitionsLabel" text="Available Transitions" style="-fx-font-size: 17" textFill="lightsteelblue"  />
+                            </HBox>
+                            <ListView fx:id="AvailableTransitions" />
+                            <VBox spacing="58.0" alignment="CENTER_LEFT">
+
+                                <Label fx:id="FinalPlacesLabel" text="Computation History" style="-fx-font-size: 17" textFill="lightsteelblue"  />
+                                <ListView fx:id="computationHistory" />
+                            </VBox>
+
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                        </VBox>
+                        </SplitPane>
+                    </children>
+                </HBox>
+
+                <HBox prefHeight="200.0" minWidth="1000.0" spacing="30" alignment="CENTER_RIGHT">
+                    <children>
+                        <Label fx:id="confirmLabel" styleClass="alert-success"></Label>
+                        <Label fx:id="errorLabel" styleClass="alert-danger"></Label>
+                        <Button  text="Delete Computation" onAction="#deleteComputation"></Button>
+                        <Region></Region><Region></Region>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+        </VBox>
+    </content>
+</ScrollPane>
