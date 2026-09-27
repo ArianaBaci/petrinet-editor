@@ -53,6 +53,81 @@ other users.
 - PlantUML – textual description and rendering of Petri net diagrams
 - Graphviz – automatic graph layout calculation
 
+## Setup and Run
+
+### Requirements
+
+* **Java 21 or later**
+* **JavaFX SDK 21 or later**
+* **IntelliJ IDEA** (recommended)
+* SQLite JDBC driver
+* PlantUML
+
+### 1. Java
+
+Install a JDK version 21 or later and configure it as the **Project SDK** in IntelliJ IDEA.
+
+### 2. JavaFX
+
+Download the JavaFX SDK and extract it locally.
+
+In IntelliJ IDEA:
+
+1. Open **File → Project Structure → Modules**
+2. Select the project module
+3. Add all the JavaFX libraries from the `lib` directory of the downloaded JavaFX SDK
+
+### 3. External libraries
+
+The project requires the following additional libraries:
+
+* **SQLite JDBC** — used to access the SQLite database
+* **PlantUML** — used to generate/render Petri net diagrams
+
+These can be added through:
+
+**File → Project Structure → Libraries → + → From Maven**
+
+Alternatively, the corresponding `.jar` files can be added manually.
+
+Make sure that the libraries are assigned to the project module in:
+
+**File → Project Structure → Modules → Dependencies**
+
+### 4. Run configuration
+
+Create or edit the application's Run Configuration in:
+
+**Run → Edit Configurations...**
+
+Set the **JRE/SDK** to the Java installation used by the project.
+
+Select "Add VM options," then in **VM options**, specify the path to the `lib` directory of the JavaFX SDK:
+
+```text
+--module-path /path/to/javafx-sdk-21.x.x/lib --add-modules javafx.controls,javafx.fxml
+```
+
+For example:
+
+```text
+--module-path /Users/username/Desktop/javafx-sdk-21.0.7/lib --add-modules javafx.controls,javafx.fxml
+```
+
+Set the **Working directory** to the root directory of the project.
+
+This is important because the application accesses the SQLite database using a relative path such as:
+
+```text
+src/resources/app.db
+```
+
+ensure the "src" folder is marked as "source folder"
+
+### 5. Run
+
+Once the SDKs, libraries, module dependencies and Run Configuration are correctly configured, run the application from IntelliJ IDEA using the project's main class.
+
 ## Demo
 
 Brief demonstration video of PetriFire editor and the fire of a transition:
