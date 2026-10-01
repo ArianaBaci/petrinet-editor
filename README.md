@@ -132,9 +132,8 @@ Once the SDKs, libraries, module dependencies and Run Configuration are correctl
 
 Brief demonstration video of PetriFire editor and the fire of a transition:
 
-<p align="center">
-  <video src="https://g122676755fae](https://github.com/user-attachments/assets/be3e0668-0cf9-496f-8903-c2ca193a2c82" width="80%" controls></video>
-</p>
+https://github.com/user-attachments/assets/be3e0668-0cf9-496f-8903-c2ca193a2c82
+
 
 
 ## My Contribution
