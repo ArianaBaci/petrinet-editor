@@ -12,6 +12,15 @@ the notification, the user can execute the transition and observe the tokens
 moving from the input places to the output places according to the Petri net
 rules.
 
+## Demo
+
+Brief demonstration video of PetriFire editor and the fire of a transition:
+
+https://github.com/user-attachments/assets/0da26e90-c9b9-4ff4-b35a-5c831d3c0f46
+
+
+
+
 ## Petri Net Visualization
 
 Graphviz is used to calculate the layout of each Petri net.
@@ -127,13 +136,6 @@ ensure the "src" folder is marked as "source folder"
 ### 5. Run
 
 Once the SDKs, libraries, module dependencies and Run Configuration are correctly configured, run the application from IntelliJ IDEA using the project's main class.
-
-## Demo
-
-Brief demonstration video of PetriFire editor and the fire of a transition:
-
-https://github.com/user-attachments/assets/0da26e90-c9b9-4ff4-b35a-5c831d3c0f46
-
 
 
 ## My Contribution
